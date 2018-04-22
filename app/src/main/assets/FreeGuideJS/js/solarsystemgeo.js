@@ -26,10 +26,22 @@ var Solar = {
             diameter: "1,392,684&nbsp;km"
         };
 
+        var label = new AR.Label(sun.name, 3, {
+            offsetY: -sun.size / 2,
+            verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP,
+            opacity: 0.9,
+            zOrder: 1,
+            style: {
+                textColor: '#FFFFFF',
+                backgroundColor: '#00000005'
+            }
+        });
+
         this.planetsInfo = [sun];
 
         var drawables = [];
         drawables[0] = new AR.ImageDrawable(sunImg, sunSize);
+        drawables[1] = label;
 
         var sol = new AR.GeoObject(estrada, {
             drawables: {
