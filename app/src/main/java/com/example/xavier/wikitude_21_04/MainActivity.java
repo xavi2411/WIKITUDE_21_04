@@ -28,27 +28,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
 
     protected void onPostCreate(final Bundle savedInstanceState) {
-
         super.onPostCreate(savedInstanceState);
 
         if (this.architectView != null) {
-
             this.architectView.onPostCreate();
 
             try {
-
-                this.architectView.load("http://xavidejuan.com/wikitude-sdk-samples/x_Demo_2_SolarSystem(Geo)/index.html");
-
-
-
+                this.architectView.load("FreeGuideJS/index.html");
             } catch (IOException e1) {
-
                 e1.printStackTrace();
-
             }
-
         }
-
     }
 
     @Override
