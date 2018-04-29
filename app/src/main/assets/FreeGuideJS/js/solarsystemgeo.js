@@ -13,12 +13,12 @@ var Solar = {
         var sunImg = new AR.ImageResource("assets/Sun-icon.png");
         var indicatorImg = new AR.ImageResource("assets/indi.png");
 
-        var sunSize = (((109 * sizeEarth) / sizeEarth) * 0.3) * sizeFactor;
+        var sunSize = (((25 * sizeEarth) / sizeEarth) * 0.3) * sizeFactor;
 
         var sun = {
             name: "Sun",
             distance: 0,
-            location: locationSun,
+            location: estrada,
             imgDrawable: new AR.ImageDrawable(sunImg, sunSize),
             size: sunSize,
             description: "The Sun is the star at the center of the Solar System. It is almost perfectly spherical and consists of hot plasma interwoven with magnetic fields.",
@@ -62,5 +62,7 @@ var Solar = {
 };
 
 AR.context.onLocationChanged = Solar.locationChanged;
+AR.context.scene.cullingDistance = 1000000;
 
 Solar.init();
+//Solar.locationChanged(42.392043, 2.867616, null, null);
